@@ -43,3 +43,14 @@ const isFullAge = ageSarah >= 18;
 // It is possible to compare all values in one console.log.
 
 console.log(now - 1985 > now - 2002);
+
+// -OPERATOR PRECEDENCE-
+
+// Operator precedence holds a set of rules on how operators are logically functioned on expressions. Operators with higher precedence takes priority over those with lower precedence.
+
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10, x = 10
+console.log(x, y);
+
+const averageAge = (ageJohn + ageSarah) / 2;
+console, log(averageAge);
