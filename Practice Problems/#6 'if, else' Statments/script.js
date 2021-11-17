@@ -5,7 +5,7 @@
 
 const country = "Republic of Korea";
 const continent = "Asia";
-let population = 52;
+let population = 13;
 const isIsland = false;
 const language = "Korean";
 
