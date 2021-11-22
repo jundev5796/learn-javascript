@@ -12,3 +12,61 @@
 // Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
 // Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
 // Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+
+const dolphinScore1 = 96;
+const dolphinScore2 = 108;
+const dolphinScore3 = 89;
+
+const koalaScore1 = 88;
+const koalaScore2 = 91;
+const koalaScore3 = 110;
+
+const dolphinAverage = (dolphinScore1 + dolphinScore2 + dolphinScore3) / 3;
+const koalaAverage = (koalaScore1 + koalaScore2 + koalaScore3) / 3;
+console.log(dolphinAverage, koalaAverage);
+
+if (dolphinAverage > koalaAverage) {
+  console.log("Dolphins Win!");
+} else if (koalaAverage > dolphinAverage) {
+  console.log("Koalas Win!");
+} else if (dolphinAverage === koalaAverage) {
+  console.log("It is a tie!");
+}
+
+// BONUS 1
+
+const dolphinAverageBonus1 = (97 + 112 + 101) / 3;
+const koalaAverageBonus1 = (109 + 95 + 123) / 3;
+console.log(dolphinAverageBonus1, koalaAverageBonus1);
+
+if (dolphinAverageBonus1 > koalaAverageBonus1 && dolphinAverageBonus1 >= 100) {
+  console.log("Dolphins Win!");
+} else if (
+  koalaAverageBonus1 > dolphinAverageBonus1 &&
+  koalaAverageBonus1 >= 100
+) {
+  console.log("Koalas Win!");
+} else if (dolphinAverageBonus1 === koalaAverageBonus1) {
+  console.log("It is a tie!");
+}
+
+// BONUS 2
+
+const dolphinAverageBonus2 = (97 + 112 + 101) / 3;
+const koalaAverageBonus2 = (109 + 95 + 106) / 3;
+console.log(dolphinAverageBonus2, koalaAverageBonus2);
+
+if (dolphinAverageBonus2 > koalaAverageBonus2 && dolphinAverageBonus2 >= 100) {
+  console.log("Dolphins Win!");
+} else if (
+  koalaAverageBonus2 > dolphinAverageBonus2 &&
+  koalaAverageBonus2 >= 100
+) {
+  console.log("Koalas Win!");
+} else if (
+  dolphinAverageBonus2 === koalaAverageBonus2 &&
+  dolphinAverageBonus2 >= 100 &&
+  koalaAverageBonus2 >= 100
+) {
+  console.log("It is a tie!");
+}
