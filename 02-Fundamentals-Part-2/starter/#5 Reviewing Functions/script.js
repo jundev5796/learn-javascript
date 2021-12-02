@@ -1,4 +1,4 @@
-// #16 Reviewing Functions
+// #5 Reviewing Functions
 
 // Calling other functions and applying if/else statements
 const calcAge = function (birthYear) {
