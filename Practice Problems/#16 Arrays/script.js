@@ -1,4 +1,4 @@
-// #16 Introduction to Arrays
+// #16 Arrays
 
 // 1. Create an array containing 4 population values of 4 countries of your choice. You may use the values you have been using previously. Store this array into a variable called 'populations'.
 // 2. Log to the console whether the array has 4 elements or not (true or false).
