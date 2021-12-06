@@ -1,6 +1,6 @@
 "use strict"; // for avoiding bugs
 
-// #6 Introduction to Arrays
+// #6 Arrays
 
 // Arrays are used to bundle various values within a container and store them in a variable.
 // This
