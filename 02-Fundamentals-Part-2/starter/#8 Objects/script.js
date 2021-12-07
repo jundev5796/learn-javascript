@@ -13,3 +13,9 @@ const john = {
   job: "developer",
   friends: ["Michael", "Peter", "Steven"],
 };
+
+const groceryList = {
+  dairy: ["eggs", "bread", "milk"],
+  vegetables: ["onion", "tomato", "broccoli", "spinach"],
+  meat: ["chicken", "ham", "beef"],
+};
