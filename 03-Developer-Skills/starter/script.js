@@ -12,3 +12,7 @@ const calcAge = birthYear => 2037 - birthYear;
 // configuring 'snippets' to avoid writing repetitive commands.
 // Ex) changing the shortcut command of 'console.log()' to 'cl'.
 console.log();
+
+// testing the 'live server' tool.
+// automatically computes and updates result on the chrome developer tool.
+console.log(calcAge(1995));
