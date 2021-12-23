@@ -1,6 +1,8 @@
 // Remember, we're gonna use strict mode in all scripts now!
 'use strict';
 
+// --USING PRETTIER AND OTHER USEFUL TOOLS--
+
 // using the 'Prettier' tool automatically structures our code to look more consistent.
 // we can adjust the formatting rules of 'Prettier' by creating a separate configuration file and configuring preferrable settings.
 const x = 23;
