@@ -1,7 +1,7 @@
 // Remember, we're gonna use strict mode in all scripts now!
 'use strict';
 
-// --USING PRETTIER AND OTHER USEFUL TOOLS--
+// -----USING PRETTIER AND OTHER USEFUL TOOLS-----
 
 // using the 'Prettier' tool automatically structures our code to look more consistent.
 // we can adjust the formatting rules of 'Prettier' by creating a separate configuration file and configuring preferrable settings.
@@ -19,7 +19,7 @@ console.log();
 // automatically computes and updates result on the chrome developer tool.
 console.log(calcAge(1995));
 
-// --SUCCESSFULLY LEARNING HOW TO CODE--
+// -----SUCCESSFULLY LEARNING HOW TO CODE-----
 
 // Have a Clear Goal
 
@@ -65,3 +65,32 @@ console.log(calcAge(1995));
 // 3. You could even try to build a group project with others.
 
 // Source: Jonas Schmedtmann
+
+// -----THINKING LIKE A DEVELOPER-----
+
+// 4 steps to solve any problem:
+
+// Ex) Task: "We need a function that reverses whatever we pass into it"
+
+// 1. Make sure you 100% understand the problem. Ask the right questions to get a clear picture of the problem.
+
+// Q) What does "whatever" mean in this context? What should be reversed?
+// -> Only strings, numbers, and arrays make sense to reverse.
+// Q) What to do if something else is passed in?
+// Q) What should be returned? Should it alwas be a string, or should the type be the same as passed in?
+// Q) How to recognize whether the argument is a number, a string, or an array?
+// Q) How to reverse a number, a string, and an array?
+
+// 2. Divide and conquer: Break a big problem into smaller sub-problems.
+
+// Sub-problems:
+// -> Check if argument is a number, a string, or an array.
+// -> Implement reversing a number.
+// -> Implement reversing a string.
+// -> Implement reversing an array.
+// -> Return reversed value.
+
+// 3. Don't be afraid to do as much research as you have to.
+
+// 4. For bigger problems, write 'pseudo-code' before writing the actual code.
+// -> A 'pseudo-code' is an informal way of describing an algorithm that does not require any syntax (can be written on actual paper).
