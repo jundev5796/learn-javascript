@@ -171,3 +171,17 @@ const calcTempAmplitudeNew = function (t1, t2) {
 };
 const amplitudeNew = calcTempAmplitudeNew([3, 5, 1], [9, 0, 5]);
 console.log(amplitudeNew); // 9 - 0 = 0
+
+// -----DEBUGGING-----
+
+// 1) IDENTIFY
+// When trying to fix a bug, we need to first become aware that there is a bug in the program. At this stage we need to identify the point in which the bug occurred. Did it occur during development? During testing our software? During production?
+
+// 2) FIND
+// After pinpointing where the bug occurred, we need to isolate where exactly the bug is happening in the code. For JavaScript, we use the developer console to find simple bugs and the debugger tool for more complex bugs.
+
+// 3) FIX
+// Once we know where the bug is located, we need to fix the code where the bug occurred. We take a logical approach and replace the error code with the corrent solution.
+
+// 4) PREVENT
+// Finally, when the code is fixed, we need to make sure the same error does not occur again. Once the problem is solved, we run a diagnosis within the entire codebase and search for any similar code in case there is a similar bug. This can be done easier by using testing softwares.
