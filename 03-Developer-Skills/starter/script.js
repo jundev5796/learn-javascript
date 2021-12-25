@@ -185,3 +185,25 @@ console.log(amplitudeNew); // 9 - 0 = 0
 
 // 4) PREVENT
 // Finally, when the code is fixed, we need to make sure the same error does not occur again. Once the problem is solved, we run a diagnosis within the entire codebase and search for any similar code in case there is a similar bug. This can be done easier by using testing softwares.
+
+// -----DEBUGGING WITH THE CONSOLE AND BREAKPOINTS-----
+
+const measureKelvin = function () {
+  const measurement = {
+    type: 'temp',
+    unit: 'celsius',
+
+    // C) FIX
+    value: Number(prompt('Degrees celsius:')), // the 'prompt' function always returns a 'string'
+  };
+
+  // B) FIND
+  console.table(measurement);
+
+  // console.log(measurement.value);
+
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+// A) IDENTIFY
+console.log(measureKelvin());
