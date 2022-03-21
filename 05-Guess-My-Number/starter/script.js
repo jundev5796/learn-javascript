@@ -11,10 +11,21 @@
 console.log(document.querySelector('.message').textContent);
 
 // changing the actual text content in the browser
-document.querySelector('.message').textContent = 'Correct Number!';
-document.querySelector('.number').textContent = 13;
-document.querySelector('.score').textContent = 10;
+// document.querySelector('.message').textContent = 'Correct Number!';
+// document.querySelector('.number').textContent = 13;
+// document.querySelector('.score').textContent = 10;
 
 // use 'value' property for input method
-document.querySelector('.guess').value = 23;
+// document.querySelector('.guess').value = 23;
 console.log(document.querySelector('.guess').value);
+
+// an 'event' is something that happens from a certain action (ex. mouse-click, cursor-moving, button-press)
+// an 'event listener' is when we are waiting for a certain action to happen
+document.querySelector('.check').addEventListener('click', function () {
+  const guess = Number(document.querySelector('.guess').value);
+  console.log(guess);
+
+  if (!guess) {
+    document.querySelector('.message').textContent = 'No Number!';
+  }
+});
