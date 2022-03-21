@@ -9,3 +9,12 @@
 // selecting 'class' or 'id' from javascript (similar with css)
 // reading the text conetent using the 'textContent' property
 console.log(document.querySelector('.message').textContent);
+
+// changing the actual text content in the browser
+document.querySelector('.message').textContent = 'Correct Number!';
+document.querySelector('.number').textContent = 13;
+document.querySelector('.score').textContent = 10;
+
+// use 'value' property for input method
+document.querySelector('.guess').value = 23;
+console.log(document.querySelector('.guess').value);
