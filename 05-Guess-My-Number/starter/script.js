@@ -20,9 +20,9 @@ console.log(document.querySelector('.message').textContent);
 console.log(document.querySelector('.guess').value);
 
 // creating an initial 'secret number' for the game logic
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
-document.querySelector('.number').textContent = secretNumber;
+// document.querySelector('.number').textContent = secretNumber;
 
 // an 'event' is something that happens from a certain action (ex. mouse-click, cursor-moving, button-press)
 // an 'event listener' is when we are waiting for a certain action to happen
@@ -39,6 +39,7 @@ document.querySelector('.check').addEventListener('click', function () {
     // when player wins
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = 'Correct Number!';
+    document.querySelector('.number').textContent = secretNumber;
 
     // manipulating CSS using DOM
     document.querySelector('body').style.backgroundColor = '#60b347';
@@ -67,4 +68,16 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
   }
+});
+
+document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = '';
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
 });
