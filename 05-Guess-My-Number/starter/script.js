@@ -22,6 +22,7 @@ console.log(document.querySelector('.guess').value);
 // creating an initial 'secret number' for the game logic
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
+let highscore = 0;
 // document.querySelector('.number').textContent = secretNumber;
 
 // an 'event' is something that happens from a certain action (ex. mouse-click, cursor-moving, button-press)
@@ -43,8 +44,12 @@ document.querySelector('.check').addEventListener('click', function () {
 
     // manipulating CSS using DOM
     document.querySelector('body').style.backgroundColor = '#60b347';
-
     document.querySelector('.number').style.width = '30rem';
+
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
 
     // when guess is too high
   } else if (guess > secretNumber) {
