@@ -1,5 +1,7 @@
 'use strict';
 
+// classes allows us to aggragate multiple css properties in a single container.
+
 // selecting only the first element ('querySelector')
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
