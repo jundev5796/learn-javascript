@@ -8,6 +8,21 @@ const btnCloseModal = document.querySelector('.close-modal');
 // selecting multiple elements ('querySelectorAll')
 const btnsOpenModal = document.querySelectorAll('.show-modal');
 
+const openModal = function () {
+  console.log('Button clicked');
+  // manipulating styles using classes ('classList')
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
 for (let i = 0; i < btnsOpenModal.length; i++) {
-  console.log(btnsOpenModal[i].textContent);
+  btnsOpenModal[i].addEventListener('click', openModal);
+
+  btnCloseModal.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
 }
