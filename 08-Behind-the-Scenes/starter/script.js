@@ -11,8 +11,12 @@
 // 8. Single-threaded
 // 9. Non-blocking event loop
 
+// ------------------------
+
 // --JAVASCRIPT ENGINE--
 // - Program that 'executes' JavaScript code (ex. v8 engine, nodeJS).
+
+// ------------------------
 
 // --COMPILATION VS. INTERPRETATION--
 
@@ -26,9 +30,32 @@
 // - 'execution' (run code immediately)
 // - 'optimization' (update code)
 
+// ------------------------
+
 // --JAVASCRIPT RUNTIME--
 // - Container including all the things that we need to use JavaScript (ex. browser)
 // - Properties
 //   a) JS Engine
 //   b) Web APIs
 //   c) Callback queue
+
+// ------------------------
+
+// --EXECUTION CONTEXT--
+
+// Q. What is an execution context?
+// A. Environment in which a piece of JavaScript is executed. Stores all the necessary information for some code to be executed.
+
+// Q. What's inside the execution context?
+// A. a) Variable Environment
+//       - let, const, and var declarations
+//       - Functions
+//       - arguments object
+//    b) Scope chain
+//    c) 'this' keyword
+
+// ------------------------
+
+// --CALL STACK--
+// - JavaScript code gets executed in a certain order:
+// - Global code -> code inside functions -> returned process
