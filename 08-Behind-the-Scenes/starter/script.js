@@ -59,3 +59,43 @@
 // --CALL STACK--
 // - JavaScript code gets executed in a certain order:
 // - Global code -> code inside functions -> returned process
+
+// ------------------------
+
+// --SCOPE--
+
+// Scoping: How our program's variables are 'organized' and 'accessed'.
+// - "Where do variables live?" or
+// - "Where can we access a certain variable, and where not?"
+
+// Lexical scoping: Scoping is controlled by 'placement' of functions and blocks in the code.
+
+// Scope: Space or environment in which a certain variable is 'declared'(variable environment in case of functions).
+// - There is 'global' scope,
+//            'function' scope, and
+//            'block' scope.
+
+// Scope of a variable: Region of our code where a certain variable can be 'accessed'.
+
+// ------------------------
+
+// --THE 3 TYPES OF SCOPE--
+
+// 1. Global Scope
+//    - Outside of 'any' function or block
+//    - Variables declared in global scope are accessible 'everywhere'
+
+// 2. Function Scope
+//    - Variables are accessible only 'inside function, NOT' outside
+//    - Also called local scope
+
+// 3. Block Scope (ES6)
+//    - Variables are accessible only 'inside block' (block scoped)
+//    - HOWEVER, this only applies to 'let' and 'const' variables!
+//    - Functions are 'also block scoped' (only in strict mode)
+
+// ------------------------
+
+// --THE SCOPE CHAIN--
+// - Scope has access to variables from all 'outer scopes'
+// - 'let' and 'const' are block-scoped, while 'var' is function-scoped
