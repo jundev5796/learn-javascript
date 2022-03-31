@@ -99,3 +99,41 @@
 // --THE SCOPE CHAIN--
 // - Scope has access to variables from all 'outer scopes'
 // - 'let' and 'const' are block-scoped, while 'var' is function-scoped
+
+// ------------------------
+
+function calcAge(birthYear) {
+  const age = 2037 - birthYear;
+
+  function printAge() {
+    let output = `You are ${age}, born in ${birthYear}`;
+    console.log(output);
+
+    if (birthYear >= 1981 && birthYear <= 1996) {
+      var millenial = true;
+      // creating NEW variable with same name as outer scope's variable
+      const firstName = 'Steven';
+
+      // reassigning outher scope's variable
+      output = 'NEW OUTPUT!';
+
+      const str = `Oh, and you're a millenial, ${firstName}`;
+      console.log(str);
+
+      function add(a, b) {
+        // function is a block-scope for ES6 only on 'strict mode'
+        return a + b;
+      }
+    }
+    // console.log(str);
+    console.log(millenial);
+    //console.log(add(2, 3));
+    console.log(output);
+  }
+  printAge();
+
+  return age;
+}
+
+const firstName = 'John';
+calcAge(1991);
