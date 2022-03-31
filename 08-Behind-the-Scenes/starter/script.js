@@ -137,3 +137,18 @@ function calcAge(birthYear) {
 
 const firstName = 'John';
 calcAge(1991);
+
+// ------------------------
+
+// --HOISTING IN JAVASCRIPT-- (Variable Environment)
+
+// Hoisting: Makes some types of variables accessible/usable in the code before they are actually declared.
+//         : "Variables lifted to the top of their scope".
+
+// - Before execution, code is scanned for variable declarations, and for each variable, a new property is created in the 'variable environment object'.
+
+// --WHY HOISTING?--
+// - Using functions before actual declaration
+// - 'var' hoisting is just a byproduct
+
+// ------------------------
