@@ -196,3 +196,17 @@ let y = 2;
 const z = 3;
 
 // ------------------------
+
+// --'this' KEYWORD--
+
+// this keyword/variable: Special variable that is created for every execution context (every function). Takes the value of (points to) the 'owner' of the function in which the 'this' keyword is used.
+
+// - 'this' is NOT static. It depends on how the function is called, and its value is only assigned when the function 'is actually called'.
+
+// 4 Ways of using 'this'
+// a) Method: this = <Object that is calling the method>
+// b) Simple function call: this = undefined
+// c) Arrow functinos: this = <this of surrounding function (lexical this)>
+// d) Event listener: this = <DOM element that the handler is attached to>
+
+// - this does NOT point to the function itself, and also NOT to the variable environment!
