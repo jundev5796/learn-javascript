@@ -210,3 +210,44 @@ const z = 3;
 // d) Event listener: this = <DOM element that the handler is attached to>
 
 // - this does NOT point to the function itself, and also NOT to the variable environment!
+
+// --EXAMPLES--
+
+console.log(this);
+
+// function
+const calcAge2 = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+// for regular function calls, the 'this' keyword will be 'undefined' (only during strict mode)
+calcAge2(1991);
+
+// arrow function
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+// since the arrow function does not have a 'this' kewyord, it finds the 'this' keyword from the global scope
+calcAgeArrow(1980);
+
+// object
+const john = {
+  year: 1999,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+john.calcAge();
+
+const matilda = {
+  year: 2017,
+};
+
+matilda.calcAge = john.calcAge;
+matilda.calcAge();
+
+// cannot call 'this' keyword with regular function calls
+const f = john.calcAge;
+// f();
