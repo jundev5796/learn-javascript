@@ -265,6 +265,21 @@ const john2 = {
   calcAge: function () {
     console.log(this);
     console.log(2037 - this.year);
+
+    // Solution 1
+    // in regular function calls, the 'this' keyword must be undefined
+    // const self = this;
+    // const isMillenial = function () {
+    //   console.log(self);
+    //   console.log(this.year >= 1981 && this.year <= 1996);
+    // };
+
+    // Solution 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1998);
+    };
+    isMillenial();
   },
 
   greet: () => {
@@ -273,3 +288,4 @@ const john2 = {
   },
 };
 john2.greet();
+john2.calcAge();
