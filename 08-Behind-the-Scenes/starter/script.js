@@ -289,3 +289,22 @@ const john2 = {
 };
 john2.greet();
 john2.calcAge();
+
+// --AGUMENTS KEYWORD--
+
+// regular functions (can add additional arguments)
+const addExpr2 = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr2(2, 5);
+addExpr2(2, 5, 8, 12);
+
+// arrow functions (cannot add additional arguments)
+var addArrow2 = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow2(2, 5, 8);
+
+// ------------------------
