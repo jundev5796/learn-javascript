@@ -301,10 +301,29 @@ addExpr2(2, 5);
 addExpr2(2, 5, 8, 12);
 
 // arrow functions (cannot add additional arguments)
-var addArrow2 = (a, b) => {
-  console.log(arguments);
-  return a + b;
+// var addArrow2 = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addArrow2(2, 5, 8);
+
+// ------------------------
+
+// --PRIMITIVES VS. OBJECTS (Primitive vs. Reference Types)--
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age); // 31
+console.log(oldAge); // 30
+
+const me2 = {
+  name: 'John',
+  age: 30,
 };
-addArrow2(2, 5, 8);
+const friend = me2;
+friend.age = 27;
+console.log('Friends:', friend); // {name: 'John', age: 27}
+console.log('Me', me2); // {name: 'John', age: 27}
 
 // ------------------------
