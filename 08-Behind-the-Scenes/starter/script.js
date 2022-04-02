@@ -251,3 +251,25 @@ matilda.calcAge();
 // cannot call 'this' keyword with regular function calls
 const f = john.calcAge;
 // f();
+
+// ------------------------
+
+// --REGULAR FUNCTIONS VS. ARROW FUNCTIONS--
+
+// 'var' creates properties on the global object (DO NOT USE VAR!)
+var firstName2 = 'Matilda';
+
+const john2 = {
+  firstName: 'John',
+  year: 1999,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+
+  greet: () => {
+    console.log(this);
+    console.log(`Hey ${this.firstName2}`);
+  },
+};
+john2.greet();
