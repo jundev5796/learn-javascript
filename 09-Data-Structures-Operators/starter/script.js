@@ -63,5 +63,7 @@ console.log(starter, mainCourse);
 
 // destructuring for nested arrays
 const nested = [2, 4, [5, 6]];
-const [i, , j] = nested;
-console.log(i, j);
+// const [i, , j] = nested;
+// console.log(i, j);
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
