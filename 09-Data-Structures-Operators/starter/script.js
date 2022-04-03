@@ -27,3 +27,14 @@ const restaurant = {
     },
   },
 };
+
+// retrieving values from an object normally
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+// storing retrieved values to a new array (destructuring process)
+const [x, y, z] = arr;
+console.log(x, y, z);
+console.log(arr);
