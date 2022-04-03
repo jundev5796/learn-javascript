@@ -38,3 +38,8 @@ const c = arr[2];
 const [x, y, z] = arr;
 console.log(x, y, z);
 console.log(arr);
+
+// retrieving selected values of an array in an object
+// leaving a 'blank' with a 'comma' skips the element that we do not need
+const [first, , second] = restaurant.categories;
+console.log(first, second);
