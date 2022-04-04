@@ -78,13 +78,23 @@ console.log(...str);
 
 // using a spread operator on a function
 const ingredients = [
-  prompt("Let's make pasta! Ingredient 1?"),
-  prompt("Let's make pasta! Ingredient 2?"),
-  prompt("Let's make pasta! Ingredient 3?"),
+  // prompt("Let's make pasta! Ingredient 1?"),
+  // prompt("Let's make pasta! Ingredient 2?"),
+  // prompt("Let's make pasta! Ingredient 3?"),
 ];
 console.log(ingredients);
 
 restaurant.orderPasta(...ingredients);
+
+// objects (ES2018 way of adding new properties in an existing object)
+const newRestaurant = { foundIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+
+// creating a copy of an existing object
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
 
 /*
 ////////////////////////////////////////////
