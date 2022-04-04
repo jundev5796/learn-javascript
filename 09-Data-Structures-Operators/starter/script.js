@@ -54,6 +54,12 @@ const obj = { a: 23, b: 7, c: 14 };
 ({ a, b } = obj);
 console.log(a, b);
 
+// nested objects
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(o, c);
+
 /*
 ////////////////////////////////////////////
 // retrieving values from an object normally
