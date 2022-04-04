@@ -87,6 +87,7 @@ console.log(ingredients);
 restaurant.orderPasta(...ingredients);
 
 // objects (ES2018 way of adding new properties in an existing object)
+// using this method creates a new object while not changing the original object
 const newRestaurant = { foundIn: 1998, ...restaurant, founder: 'Guiseppe' };
 console.log(newRestaurant);
 
