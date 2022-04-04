@@ -41,8 +41,53 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
 };
 
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+// spread operator (unpacking arrays)
+// spread operator does not create new variables
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr); // 1, 2, 7, 8, 9
+
+// example
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// Iterables: arrays, strings, maps, sets. NOT objects
+// either taking in arguments of a function or creating a new array
+const str = 'John';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
+console.log(...str);
+
+// using a spread operator on a function
+const ingredients = [
+  prompt("Let's make pasta! Ingredient 1?"),
+  prompt("Let's make pasta! Ingredient 2?"),
+  prompt("Let's make pasta! Ingredient 3?"),
+];
+console.log(ingredients);
+
+restaurant.orderPasta(...ingredients);
+
+/*
+////////////////////////////////////////////
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
@@ -83,6 +128,7 @@ const {
   fri: { open: o, close: c },
 } = openingHours;
 console.log(o, c);
+*/
 
 /*
 ////////////////////////////////////////////
