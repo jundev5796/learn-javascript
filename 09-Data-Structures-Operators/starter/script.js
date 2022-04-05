@@ -52,6 +52,49 @@ const restaurant = {
   },
 };
 
+////////////////////////////////////////////
+// --Short Circuiting (&& and II)--
+
+// use ANY data type, return ANY data type, short-circuiting
+
+// OR (||)
+console.log('---- OR ----');
+
+// if the 1st value is a 'truthy' value, it will return that value immediately
+console.log(3 || 'John'); // 3
+console.log('' || 'John'); // 'John'
+console.log(true || 0); // true
+console.log(undefined || null); // null
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // 'Hello'
+
+// use case
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+// AND (&&)
+console.log('---- AND ----');
+
+// if the 1st value is a 'falsy' value, it will short-circuits and returns that value
+// if all the values are 'truthy' values, it will keep going and return the last truthy value
+console.log(0 && 'John');
+console.log(7 && 'John');
+
+console.log('Hello' && 23 && null && 'John');
+
+// use case
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+/*
+////////////////////////////////////////////
 // --Rest Pattern and Parameters--
 
 // 1) Destructuring
@@ -93,6 +136,7 @@ add(...x);
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
+*/
 
 /*
 ////////////////////////////////////////////
