@@ -53,6 +53,22 @@ const restaurant = {
 };
 
 ////////////////////////////////////////////
+// --The for-of Loop (ES6)--
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// an easier and faster way of looping over arrays
+for (const item of menu) console.log(item);
+
+// obtaining the current index using a 'for of' loop
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]);
+
+/*
+////////////////////////////////////////////
 // --Logical Assignment Operators (ES2021)--
 
 const rest1 = {
@@ -84,6 +100,7 @@ rest2.owner &&= '<ANONYMOUS>';
 
 console.log(rest1);
 console.log(rest2);
+*/
 
 /*
 ////////////////////////////////////////////
