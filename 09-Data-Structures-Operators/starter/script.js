@@ -339,10 +339,13 @@ restaurant.orderDelivery({
   starterIndex: 1,
 });
 
-// destructuring objects
+////////////////////////////////////////////
+// --destructuring objects--
+
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 
+// giving new variable names for properties
 const {
   name: restaurantName,
   openingHours: hours,
@@ -371,6 +374,8 @@ console.log(o, c);
 
 /*
 ////////////////////////////////////////////
+// --Destructuring Arrays--
+
 // retrieving values from an object normally
 const arr = [2, 3, 4];
 const a = arr[0];
@@ -379,8 +384,8 @@ const c = arr[2];
 
 // storing retrieved values to a new array (destructuring process)
 const [x, y, z] = arr;
-console.log(x, y, z);
-console.log(arr);
+console.log(x, y, z); // 2, 3, 4
+console.log(arr); // [2, 3, 4]
 
 // retrieving selected values of an array in an object
 // leaving a 'blank' with a 'comma' skips the element that we do not need
@@ -393,6 +398,7 @@ console.log(main, secondary);
 // secondary = temp;
 // console.log(main, secondary);
 
+// reassigning variables
 [main, secondary] = [secondary, main];
 console.log(main, secondary);
 
@@ -407,7 +413,7 @@ const nested = [2, 4, [5, 6]];
 const [i, , [j, k]] = nested;
 console.log(i, j, k);
 
-// default values
+// default values (in case there is no set value)
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
 */
