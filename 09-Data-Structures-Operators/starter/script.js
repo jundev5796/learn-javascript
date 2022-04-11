@@ -272,7 +272,7 @@ restaurant.orderPizza('mushrooms');
 
 /*
 ////////////////////////////////////////////
-// The Spread Operator (...)
+// --The Spread Operator (...)--
 
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
@@ -327,6 +327,8 @@ console.log(restaurant.name);
 
 /*
 ////////////////////////////////////////////
+// --destructuring objects--
+
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
@@ -338,9 +340,6 @@ restaurant.orderDelivery({
   address: 'Via del Sole, 21',
   starterIndex: 1,
 });
-
-////////////////////////////////////////////
-// --destructuring objects--
 
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
