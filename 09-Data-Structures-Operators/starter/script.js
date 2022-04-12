@@ -195,11 +195,11 @@ console.log('---- OR ----');
 console.log(3 || 'John'); // 3
 console.log('' || 'John'); // 'John'
 console.log(true || 0); // true
-console.log(undefined || null); // null
+console.log(undefined || null); // null (because if there is no short circuiting, it returns the last value)
 
 console.log(undefined || 0 || '' || 'Hello' || 23 || null); // 'Hello'
 
-// use case
+// use-case
 restaurant.numGuests = 23;
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests1);
@@ -217,7 +217,7 @@ console.log(7 && 'John');
 
 console.log('Hello' && 23 && null && 'John');
 
-// use case
+// use-case
 if (restaurant.orderPizza) {
   restaurant.orderPizza('mushrooms', 'spinach');
 }
