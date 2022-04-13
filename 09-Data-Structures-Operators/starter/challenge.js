@@ -46,15 +46,15 @@ const [players1, players2] = game.players;
 console.log(players1, players2);
 
 // 2.
-const [gk, ...fieldPlayers] = players1;
-console.log(gk, fieldPlayers);
+const [gk, ...fieldplayers] = players1;
+console.log(gk, fieldplayers);
 
 // 3.
 const allPlayers = [...players1, ...players2];
 console.log(allPlayers);
 
 // 4.
-const players1Final = [...players1, 'Thiago', 'Couthinho', 'Perisic'];
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 console.log(players1Final);
 
 // 5.
@@ -64,14 +64,14 @@ const {
 console.log(team1, draw, team2);
 
 // 6.
-const printGoals = function (...players) {
+const printGaols = function (...players) {
   console.log(`${players.length} goals were scored`);
 };
 
-printGoals('Davies', 'Mueller', 'Lewandowski', 'Kimmich');
-printGoals('Davies', 'Mueller');
-printGoals(...game.scored);
+printGaols('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+printGaols('Davies', 'Muller');
+printGaols(...game.scored);
 
 // 7.
 team1 < team2 && console.log('Team 1 is more likely to win');
-team1 > team2 && console.log('Team 2 is more likely to win');
+team2 < team1 && console.log('Team 2 is more likely to win');
