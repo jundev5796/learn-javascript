@@ -6,7 +6,7 @@ const flights =
 
 // Data needed for first part of the section
 
-// 3. ES6 enhanced object literals (Compute property names)
+// 3. ES6 enhanced object literals (compute property names)
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 const openingHours = {
