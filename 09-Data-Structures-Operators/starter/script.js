@@ -56,6 +56,40 @@ const restaurant = {
 };
 
 ////////////////////////////////////////////
+// --Maps: Iteration--
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct!'],
+  [false, 'Try Again!'],
+]);
+console.log(question);
+
+// converting object to map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// iteration on maps
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+const answer = Number(prompt('Your Answer'));
+console.log(answer);
+
+// display boolean values
+console.log(question.get(question.get('correct') === answer));
+
+// convert map to array
+console.log([...question]);
+
+/*
+////////////////////////////////////////////
 // --Maps: Fundamentals--
 
 // maps are data structures stored as key-value pairs (just like objects)
@@ -102,6 +136,7 @@ rest.set(document.querySelector('h1'), 'Heading');
 console.log(rest);
 
 console.log(rest.get(arr));
+*/
 
 /*
 ////////////////////////////////////////////
