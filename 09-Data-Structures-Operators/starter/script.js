@@ -56,6 +56,53 @@ const restaurant = {
 };
 
 ////////////////////////////////////////////
+// --Sets (collection of unique values without duplicates)--
+
+// There is no need to retrieve values out of a set
+
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(ordersSet); // {'Pasta', 'Pizza', 'Risotto'}
+
+// set with strings
+console.log(new Set('John')); // {'J', 'o', 'h', 'n'}
+
+// checking number of unique values in a set
+console.log(ordersSet.size);
+
+// checking if a certain element is in a set
+console.log(ordersSet.has('Pizza')); // true
+console.log(ordersSet.has('Bread')); // false
+
+// adding a new element to a set
+ordersSet.add('Garlic Bread');
+console.log(ordersSet);
+
+// deleting existing elements in a set
+ordersSet.delete('Risotto');
+console.log(ordersSet);
+
+// looping over sets
+for (const order of ordersSet) console.log(order);
+
+// example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('John').size);
+
+/*
+////////////////////////////////////////////
 // --Looping Objects: Object Keys, Values, and Entries--
 
 // Object Keys
@@ -80,6 +127,7 @@ console.log(entries);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
+*/
 
 /*
 ////////////////////////////////////////////
