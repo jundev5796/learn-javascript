@@ -56,6 +56,21 @@ const restaurant = {
 };
 
 ////////////////////////////////////////////
+// --Data Structures Overview--
+
+// Where does data come from?
+// 1. From the program itself
+// 2. From the UI
+// 3. From external sources (web API)
+
+// Where is data stored?
+// - Within data structures
+// 1. Arraays or Sets (simple list)
+// 2. Objects or Maps (key/value pairs)
+// - Data within web API's are stored as JSON
+
+/*
+////////////////////////////////////////////
 // --Maps: Iteration--
 
 const question = new Map([
@@ -87,6 +102,7 @@ console.log(question.get(question.get('correct') === answer));
 
 // convert map to array
 console.log([...question]);
+/*
 
 /*
 ////////////////////////////////////////////
