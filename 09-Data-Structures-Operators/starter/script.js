@@ -56,6 +56,69 @@ const restaurant = {
 };
 
 ////////////////////////////////////////////
+// --Working with Strings (Part 2)--
+
+const airline = 'TAP Air Portugal';
+
+// changing string format to either 'lower-case' or 'upper-case'
+console.log(airline.toLowerCase()); // tap air portugal
+console.log(airline.toUpperCase()); // TAP AIR PORTUGAL
+
+// fix capitalization in name
+const passenger = 'jOhN'; // John
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// comparing email
+const email = 'hellow@john.io';
+const loginEmail = '  Hello@john.Io \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+// deleting whitespaces
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+// replacing parts of strings
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.'); // chaining method
+console.log(priceUS); // 288.97$
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replaceAll('door', 'gate')); // method 1
+console.log(announcement.replace(/door/g, 'gate')); // method 2
+
+// booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320')); // true
+console.log(plane.includes('Boeing')); // false
+console.log(plane.startsWith('Air'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family');
+}
+
+// [EXAMPLE]
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('tazer')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a tazer for protection');
+
+/*
+////////////////////////////////////////////
 // --Working with Strings (Part 1)--
 
 const airline = 'TAP Air Portugal';
@@ -103,6 +166,7 @@ checkMiddleSeat('23C');
 checkMiddleSeat('3E');
 
 // NOTE: when we work with strings, javascript converts strings to objects behind the scenes (which is why strings are able to use methods)
+*/
 
 ////////////////////////////////////////////
 // --Data Structures Overview--
