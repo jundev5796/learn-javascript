@@ -56,6 +56,55 @@ const restaurant = {
 };
 
 ////////////////////////////////////////////
+// --Working with Strings (Part 1)--
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+// retrieving elements from strings directly
+console.log(plane[0]); // A
+console.log(plane[1]); // 3
+console.log(plane[2]); // 2
+console.log('B737'[0]); // B
+
+// retrieving the length of string elements
+console.log(airline.length); // 16
+console.log('B737'.length); // 4
+
+// locating the index of string elements
+console.log(airline.indexOf('r')); // 6
+console.log(airline.lastIndexOf('r')); // 10
+console.log(airline.indexOf('portugal')); // -1
+
+// the 'slice' method (does not get mutated)
+console.log(airline.slice(4)); // Air Portugal
+console.log(airline.slice(4, 7)); // Air (last index is omitted)
+
+// retrieving elements without directly using the values
+console.log(airline.slice(0, airline.indexOf(' '))); // TAP
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Portugal
+
+// counting from the last index
+console.log(airline.slice(-2)); // al
+console.log(airline.slice(1, -1)); // AP Air Portuga
+
+// [EXAMPLE]
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat :(');
+  } else {
+    console.log('You got lucky :)');
+  }
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+// NOTE: when we work with strings, javascript converts strings to objects behind the scenes (which is why strings are able to use methods)
+
+////////////////////////////////////////////
 // --Data Structures Overview--
 
 // Where does data come from?
