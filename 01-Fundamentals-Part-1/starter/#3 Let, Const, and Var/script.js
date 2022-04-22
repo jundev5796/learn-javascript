@@ -20,4 +20,4 @@ birthYear = 2020; // this will not work
 // However, 'var' is not similar to 'let'.
 
 var job = "programmer";
-job = "teacher";
+job = "biochemist";
