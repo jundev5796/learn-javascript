@@ -77,7 +77,7 @@ console.log(calcAge(1995));
 // Q) What does "whatever" mean in this context? What should be reversed?
 // -> Only strings, numbers, and arrays make sense to reverse.
 // Q) What to do if something else is passed in?
-// Q) What should be returned? Should it alwas be a string, or should the type be the same as passed in?
+// Q) What should be returned? Should it always be a string, or should the type be the same as passed in?
 // Q) How to recognize whether the argument is a number, a string, or an array?
 // Q) How to reverse a number, a string, and an array?
 
