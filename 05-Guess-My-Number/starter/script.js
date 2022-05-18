@@ -1,5 +1,7 @@
 'use strict';
 
+// NOTE: When manipulating style with DOM, always write it as a string.
+
 // What is the DOM?
 // - DOM stands for 'Document Object Model' which is a structured representation of HTML documents.
 // - Allows JavaScript to access HTML elements and styles to manipulate them.
