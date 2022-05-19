@@ -13,6 +13,7 @@ const btnsOpenModal = document.querySelectorAll('.show-modal');
 const openModal = function () {
   console.log('Button clicked');
   // manipulating styles using classes ('classList')
+  // do not need to use dots(.) for classList
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
 };
