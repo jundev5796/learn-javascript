@@ -1,20 +1,25 @@
 'use strict';
 
 // --JAVASCRIPT OVERVIEW--
-// 1. High-level
-// 2. Garbage-collected
-// 3. Interpreted or just-in-time compiled
-// 4. Multi-paradigm
-// 5. Prototype-based object-oriented
-// 6. First-class functions
-// 7. Dynamic
-// 8. Single-threaded
+// 1. High-level (do not need to worry about managing resources such as memory)
+// 2. Garbage-collected (automatically removes old/unused memory)
+// 3. Interpreted or just-in-time compiled (translates and compiles human language to 0's and 1's)
+// 4. Multi-paradigm (accepts various coding style and structure)
+// 5. Prototype-based object-oriented (methods are inherited from prototypes)
+// 6. First-class functions (functions are treated as regular variables)
+// 7. Dynamic (variables can be changed flexibly)
+// 8. Single-threaded (need to handle multiple actions within one runtime)
 // 9. Non-blocking event loop
 
 // ------------------------
 
 // --JAVASCRIPT ENGINE--
 // - Program that 'executes' JavaScript code (ex. v8 engine, nodeJS).
+// - Each engine contains a 'call stack' and 'heap'.
+// - call stacks executes the code itself
+// - heap stores all the objects of the application
+
+// Q. How is machine code compiled?
 
 // ------------------------
 
@@ -36,7 +41,7 @@
 // - Container including all the things that we need to use JavaScript (ex. browser)
 // - Properties
 //   a) JS Engine
-//   b) Web APIs
+//   b) Web APIs (functionalities provided to the engine, accessible on window object)
 //   c) Callback queue
 
 // ------------------------
