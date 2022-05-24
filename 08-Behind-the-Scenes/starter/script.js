@@ -48,8 +48,13 @@
 
 // --EXECUTION CONTEXT--
 
+// - global codes (code outside functions) will get executed first (top-level code).
+// - there is only one global execution context per project.
+// - new execution contexts are created within each function.
+// - arrow functions do not have their own arguments or 'this' keyword. Instead they get these from their closest parent code.
+
 // Q. What is an execution context?
-// A. Environment in which a piece of JavaScript is executed. Stores all the necessary information for some code to be executed.
+// A. Environment in which a piece of JavaScript is executed. Stores all the necessary information for some code to be executed (local variables, arguments).
 
 // Q. What's inside the execution context?
 // A. a) Variable Environment
@@ -103,7 +108,8 @@
 
 // --THE SCOPE CHAIN--
 // - Scope has access to variables from all 'outer scopes'
-// - 'let' and 'const' are block-scoped, while 'var' is function-scoped
+// - 'let' and 'const' are block-scoped, while 'var' is function-scoped ('var' is not affected by block scopes)
+// - The Sscope chain has no control of the code executed within the call stack.
 
 // ------------------------
 
