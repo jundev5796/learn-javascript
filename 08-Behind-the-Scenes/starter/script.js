@@ -267,6 +267,9 @@ const f = john.calcAge;
 
 // --REGULAR FUNCTIONS VS. ARROW FUNCTIONS--
 
+// - a regular function within a method inside a function cannot execute 'this'
+// - since arrow functions does not get their own 'this' keyword, they can be used within methods.
+
 // 'var' creates properties on the global object (DO NOT USE VAR!)
 var firstName2 = 'Matilda';
 
