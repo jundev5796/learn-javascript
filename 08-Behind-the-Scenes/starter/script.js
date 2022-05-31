@@ -338,7 +338,9 @@ const me2 = {
 const friend = me2;
 friend.age = 27;
 console.log('Friends:', friend); // {name: 'John', age: 27}
-console.log('Me', me2); // {name: 'John', age: 27}
+console.log('Me:', me2); // {name: 'John', age: 27}
+
+// Source of Confusion: contents within objects can be changed by other variables pointing to the same object
 
 // --EXAMPLES--
 
@@ -369,7 +371,8 @@ const jessica2 = {
   family: ['Alice', 'Bob'],
 };
 
-const jessicaCopy = Object.assign({}, jessica2);
+// 'object.assign' method
+const jessicaCopy = Object.assign({}, jessica2); // creating an entirely new object
 jessicaCopy.lastName = 'Davis';
 
 jessicaCopy.family.push('Mary');

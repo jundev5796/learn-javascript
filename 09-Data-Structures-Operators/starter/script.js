@@ -5,25 +5,6 @@ const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // Data needed for first part of the section
-
-// 3. ES6 enhanced object literals (compute property names)
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-
-const openingHours = {
-  [weekdays[3]]: {
-    open: 12,
-    close: 22,
-  },
-  [weekdays[4]]: {
-    open: 11,
-    close: 23,
-  },
-  [weekdays[5]]: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
-
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -31,86 +12,175 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  // 1. ES6 enhanced object literals (can create new object and call it with that variable as a property)
-  openingHours,
-
-  // 2. ES6 enhanced object literals (don't need 'function' keyword)
-  order(starterIndex, mainIndex) {
+  order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
-    console.log(
-      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-    );
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
   },
-
-  orderPasta(ing1, ing2, ing3) {
-    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
-  },
-
-  orderPizza(mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
 };
 
-////////////////////////////////////////////
-// --Working with Strings (Part 3)--
+// 1. Destructuring Arrays
 
-// the 'split' method
-console.log('a+vvery+nice+string'.split('+')); // a very nice string
-console.log('John Smith'.split(' ')); // John Smith
+// - Breaking down arrays and storing them into separate variables
 
-// the 'join' method
-const [firstName, lastName] = 'John Smith'.split(' ');
+// declaring all variables at the same time
+const arr = [2, 3, 4];
 
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
-console.log(newName);
+const [x, y, z] = arr; // destructuring assignment
+console.log(x, y, z); // 2, 3, 4
+console.log(arr); // [2, 3, 4] (original array not affected)
 
-// capitalize name easier
-const capitalizeName = function (name) {
-  const names = name.split(' ');
-  const namesUpper = [];
+// aking out values from an array in an object
+let [main, , secondary] = restaurant.categories; // leave a blank to skip a value
+console.log(main, secondary); // Italian Vegetarian
 
-  for (const n of names) {
-    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
-    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
-  }
-  console.log(namesUpper.join(' '));
-};
+// switching variables
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
 
-capitalizeName('jessica ann smith davis');
-capitalizeName('john smith');
+// receive 2 return values from a function
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
 
-// padding
-const message = 'Go to gate 23!';
-console.log(message.padStart(25, '+').padEnd(30, '+'));
-console.log('John'.padStart(23, '+').padEnd(30, '+'));
+// destructuring nested arrays
+const nested = [2, 4, [5, 6]];
 
-// [EXAMPLE]
-const maskCreditCard = function (number) {
-  const str = number + '';
-  const last = str.slice(-4);
-  return last.padStart(str.length, '*');
-};
+// const [i, , j] = nested;
+// console.log(i, j);
 
-console.log(maskCreditCard(38473928));
-console.log(maskCreditCard(433784633904089328048));
-console.log(maskCreditCard(149057043898578915714));
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
 
-// repeat
-const message2 = 'Bad weather... All Departures Delayed...';
-console.log(message2.repeat(5));
+// setting default values for destructuring
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
 
-// [EXAMPLE]
-const planesInLine = function (n) {
-  console.log(`There are ${n} planes in line ${'1'.repeat(n)}`);
-};
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-planesInLine(5);
-planesInLine(3);
-planesInLine(12);
+// // Data needed for a later exercise
+// const flights =
+//   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// // Data needed for first part of the section
+
+// // 3. ES6 enhanced object literals (compute property names)
+// const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+// const openingHours = {
+//   [weekdays[3]]: {
+//     open: 12,
+//     close: 22,
+//   },
+//   [weekdays[4]]: {
+//     open: 11,
+//     close: 23,
+//   },
+//   [weekdays[5]]: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
+
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   // 1. ES6 enhanced object literals (can create new object and call it with that variable as a property)
+//   openingHours,
+
+//   // 2. ES6 enhanced object literals (don't need 'function' keyword)
+//   order(starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+
+//   orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+//     console.log(
+//       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+//     );
+//   },
+
+//   orderPasta(ing1, ing2, ing3) {
+//     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+//   },
+
+//   orderPizza(mainIngredient, ...otherIngredients) {
+//     console.log(mainIngredient);
+//     console.log(otherIngredients);
+//   },
+// };
+
+// ////////////////////////////////////////////
+// // --Working with Strings (Part 3)--
+
+// // the 'split' method
+// console.log('a+vvery+nice+string'.split('+')); // a very nice string
+// console.log('John Smith'.split(' ')); // John Smith
+
+// // the 'join' method
+// const [firstName, lastName] = 'John Smith'.split(' ');
+
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// console.log(newName);
+
+// // capitalize name easier
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+
+//   for (const n of names) {
+//     // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(' '));
+// };
+
+// capitalizeName('jessica ann smith davis');
+// capitalizeName('john smith');
+
+// // padding
+// const message = 'Go to gate 23!';
+// console.log(message.padStart(25, '+').padEnd(30, '+'));
+// console.log('John'.padStart(23, '+').padEnd(30, '+'));
+
+// // [EXAMPLE]
+// const maskCreditCard = function (number) {
+//   const str = number + '';
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, '*');
+// };
+
+// console.log(maskCreditCard(38473928));
+// console.log(maskCreditCard(433784633904089328048));
+// console.log(maskCreditCard(149057043898578915714));
+
+// // repeat
+// const message2 = 'Bad weather... All Departures Delayed...';
+// console.log(message2.repeat(5));
+
+// // [EXAMPLE]
+// const planesInLine = function (n) {
+//   console.log(`There are ${n} planes in line ${'1'.repeat(n)}`);
+// };
+
+// planesInLine(5);
+// planesInLine(3);
+// planesInLine(12);
 
 /*
 ////////////////////////////////////////////
@@ -695,6 +765,8 @@ console.log(o, c);
 /*
 ////////////////////////////////////////////
 // --Destructuring Arrays--
+
+// - Breaking down arrays and storing them into separate variables
 
 // retrieving values from an object normally
 const arr = [2, 3, 4];
