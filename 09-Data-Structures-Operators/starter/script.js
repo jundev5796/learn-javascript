@@ -16,6 +16,17 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -32,6 +43,55 @@ const restaurant = {
   },
 };
 
+// 2. Destructuring Objects
+
+// - order does not matter
+// - useful for API calls (ex. movies, weather)
+
+// calling and destructuring an entire object from a function
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Via del Sole, 21',
+  starterIndex: 1,
+});
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+// giving new variable names during destructuring of obejcts
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// setting default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// mutating variables while destructuring objects
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+
+({ a, b } = obj); // need to include paranthesis for mutating variables in objects
+console.log(a, b);
+
+// nested objects
+const {
+  fri: { open, close }, // include the exact variable names within nested objects
+} = openingHours;
+console.log(open, close);
+
+// --
+
 // 1. Destructuring Arrays
 
 // - Breaking down arrays and storing them into separate variables
@@ -43,7 +103,7 @@ const [x, y, z] = arr; // destructuring assignment
 console.log(x, y, z); // 2, 3, 4
 console.log(arr); // [2, 3, 4] (original array not affected)
 
-// aking out values from an array in an object
+// taking out values from an array in an object
 let [main, , secondary] = restaurant.categories; // leave a blank to skip a value
 console.log(main, secondary); // Italian Vegetarian
 
