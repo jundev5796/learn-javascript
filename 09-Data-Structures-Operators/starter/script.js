@@ -12,6 +12,21 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
@@ -27,21 +42,59 @@ const restaurant = {
     );
   },
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
 };
+
+// 3. The Spread Operator (...)
+
+// - expandin an array with new elements
+// - writing multiple values separated by commas
+// - unlike destructuring, spread operators takes all the elements from an array and does not create new variables (on values separated by commas)
+
+const arr2 = [7, 8, 9];
+const newArr = [1, 2, ...arr2];
+console.log(...newArr);
+
+// example
+const newMenu = [...restaurant.mainMenu, 'Gnocci']; // building a new array
+console.log(newMenu);
+
+// copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// join 2 arrays
+const menu2 = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu2);
+
+// iterables: arrays, strings, maps, sets, NOT objects (does not work on template literals)
+const str = 'John';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
+console.log(...str);
+console.log('j', 'o');
+
+// real-world exammple
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredient 1?"),
+//   prompt('Ingredient 2?'),
+//   prompt('Ingredient 3?'),
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(...ingredients);
+
+// objects
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+// --
 
 // 2. Destructuring Objects
 
