@@ -45,11 +45,58 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
+
+// 4. Rest Pattern and Parameters
+
+// - packs elements into a single array (opposite of the spread operator)
+
+// SPREAD, because on RIGHT side of =
+const arr3 = [1, 2, ...[3, 4]];
+
+// REST, because on LEFT side of =
+const [a2, b2, ...others] = [1, 2, 3, 4, 5];
+console.log(a2, b2, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+add(2, 3);
+add(5, 3, 7);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x2 = [23, 5, 7];
+add(...x2);
+
+// example
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
+
+// --
 
 // 3. The Spread Operator (...)
 
-// - expandin an array with new elements
+// - expanding an array with new elements
 // - writing multiple values separated by commas
 // - unlike destructuring, spread operators takes all the elements from an array and does not create new variables (on values separated by commas)
 
