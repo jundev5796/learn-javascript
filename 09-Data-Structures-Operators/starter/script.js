@@ -52,6 +52,39 @@ const restaurant = {
   },
 };
 
+// 5. Short Circuiting ($$ and ||)
+
+console.log('---- OR ----');
+// logical operators: they can use ANY data type, return ANY data type, short-circuiting
+console.log(3 || 'John'); // if 1st value is true, then it immediately gets returned, while the other value will not even be evaluated
+console.log('' || 'John');
+console.log(true || 0);
+console.log(undefined || null); // if there is no true value, then the last value will be returned
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // evaluates every value until a truthy value
+
+// example
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('---- AND ----');
+console.log(0 && 'John'); // if 1st value is false, it immediately returns that value
+console.log(7 && 'John');
+
+console.log('Hello' && 23 && null && 'John');
+
+// example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+// --
+
 // 4. Rest Pattern and Parameters
 
 // - packs elements into a single array (opposite of the spread operator)
