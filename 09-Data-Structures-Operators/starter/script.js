@@ -52,6 +52,21 @@ const restaurant = {
   },
 };
 
+// 8. Looping Arrays: The for-of Loop
+
+// - a shorter method of looping through arrays (can be done w/o counters and conditions)
+
+const menu3 = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu3) console.log(item);
+
+// looping through index
+for (const [i, el] of menu3.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// --
+
 // 7. Logical Assignment Operators
 
 // example
