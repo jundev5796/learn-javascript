@@ -54,6 +54,42 @@ const restaurant = {
   },
 };
 
+// 10. Optional Chaining (?.)
+
+// - checks if a certain factor exist or not
+
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// recreating above with optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed'; // use brackets to use existing variable on for loop
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+// arrays
+const users = [
+  {
+    name: 'John',
+    email: 'john123@john.io',
+  },
+];
+
+console.log(users[0]?.name ?? 'User array empty');
+console.log(users[0]?.job ?? 'User array empty');
+
+// --
+
 // 9. Enhanced Object Literals
 
 // --
