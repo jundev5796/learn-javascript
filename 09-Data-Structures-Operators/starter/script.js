@@ -54,7 +54,71 @@ const restaurant = {
   },
 };
 
+// 12. Sets
+
+// - ES6 method
+// - a collection of unique values
+// - cannot have duplicates
+
+console.log('---------------------Sets---------------------');
+
+// using sets in an array
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(ordersSet);
+
+// strings
+console.log(new Set('John'));
+
+// size
+console.log(ordersSet.size); // not length
+
+// check for element
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+
+// add new elements
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+console.log(ordersSet);
+
+// delete elements
+ordersSet.delete('Risotto');
+console.log(ordersSet);
+
+// retrieve values from sets
+
+// - cannot retrieve values out of sets
+// - there is no need to retrieve values from sets
+
+// clear
+// ordersSet.clear();
+
+// looping over sets
+for (const order of ordersSet) console.log(order);
+
+// EXAMPLE
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('John').size);
+
+// --
+
 // 11. Looping Objects: Object Keys, Values, and Entries
+
+console.log('---------------------Looping Objects---------------------');
 
 // property names (keys)
 const properties = Object.keys(openingHours);
