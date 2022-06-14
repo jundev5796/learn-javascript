@@ -54,6 +54,88 @@ const restaurant = {
   },
 };
 
+// 12. Maps: Iteration
+
+console.log('---------------------Maps: Iteration---------------------');
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct :D'],
+  [false, 'Try Again!'],
+]);
+console.log(question);
+
+// convert object to map
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// for loops in map
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+const answer = Number(prompt('Your answer'));
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+// convert map to array
+console.log([...question]);
+
+// --
+
+// 12. Maps: Fundamentals
+
+// - data structure used to map values to keys
+// - keys can have any types (unlike objects which need to be strings)
+// - more useful than sets
+
+console.log('---------------------Maps: Fundamentals---------------------');
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano'); // similar to 'add' method
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+// chain set methods
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+// reading data from map
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+// EXAMPLE (don't use this method)
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// check
+console.log(rest.has('categories'));
+
+// delete
+rest.delete(2);
+console.log(rest);
+
+// EXAMPLE(2)
+rest.set([1, 2], 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+
+console.log(rest.get());
+
+// --
+
 // 12. Sets
 
 // - ES6 method
