@@ -70,7 +70,7 @@ const question = new Map([
 console.log(question);
 
 // convert object to map
-const hoursMap = new Map(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours)); // this works because they are both similar
 console.log(hoursMap);
 
 // for loops in map
