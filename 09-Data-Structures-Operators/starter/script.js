@@ -54,7 +54,55 @@ const restaurant = {
   },
 };
 
-// 12. Maps: Iteration
+// 14. Working With Strings #1
+
+console.log(
+  '---------------------Working With Strings #1---------------------'
+);
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]); // A
+console.log(plane[1]); // 3
+console.log(plane[2]); // 2
+console.log('B737'[0]); // B
+
+console.log(airline.length); // 16
+console.log('B7737'.length); // 5
+
+console.log(airline.indexOf('r')); // 6
+console.log(airline.lastIndexOf('r')); // 10
+console.log(airline.indexOf('Portugal')); // 8
+
+// slice method
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7)); // end value not included
+
+// EXAMPLE
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+// EXAMPLE(2)
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat!');
+  } else {
+    console.log('You got lucky!');
+  }
+};
+
+checkMiddleSeat('11B'); // when the function is called, the string is converted to an object (then back to string when the process is completed)
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+// --
+
+// 13. Maps: Iteration
 
 console.log('---------------------Maps: Iteration---------------------');
 
@@ -79,10 +127,10 @@ for (const [key, value] of question) {
   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
 }
 
-const answer = Number(prompt('Your answer'));
-console.log(answer);
+// const answer = Number(prompt('Your answer'));
+// console.log(answer);
 
-console.log(question.get(question.get('correct') === answer));
+// console.log(question.get(question.get('correct') === answer));
 
 // convert map to array
 console.log([...question]);
