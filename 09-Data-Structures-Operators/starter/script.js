@@ -54,6 +54,72 @@ const restaurant = {
   },
 };
 
+// 15. Working With Strings #2
+
+console.log(
+  '---------------------Working With Strings #2---------------------'
+);
+
+const airline2 = 'TAP Air Portugal';
+
+console.log(airline2.toLowerCase());
+console.log(airline2.toUpperCase());
+
+// fix capitalization in name
+const passenger = 'jOhN';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// EXAMPLE (comparing email)
+const email = 'hello@john.io';
+const loginEmail = '  Hello@John.Io \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim(); // deletes all spaces
+console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// replacing parts of strings
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+
+console.log(announcement.replaceAll('door', 'gate'));
+
+// booleans
+const plane2 = 'A320neo';
+console.log(plane2.includes('A320')); // true
+console.log(plane2.includes('Boeing')); // false
+console.log(plane2.startsWith('A')); // false
+
+if (plane2.startsWith('A') && plane2.endsWith('neo')) {
+  console.log('Part of the NEW Airbus Family');
+}
+
+// EXAMPLE (2)
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+// --
+
 // 14. Working With Strings #1
 
 console.log(
