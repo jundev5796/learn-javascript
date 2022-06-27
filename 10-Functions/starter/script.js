@@ -71,3 +71,21 @@ const newPassport = function (person) {
 
 newPassport(john);
 checkIn(flight, john);
+
+// --
+
+// 3. First-Class and Higher-Order Functions
+
+console.log(
+  "--------------------------First-Class and Higher-Order Functions--------------------------"
+);
+
+// first-class functions
+// - javascript treats functions as 'first-class citizens'
+// - this means that functions are 'simply values'
+// - functions are just another 'type' of object (since objects are values, functionas are also values)
+
+// higher-order functions
+// - a function that 'receives' another function as an argument, that 'returns' a new function, or 'both'
+// - this is only possible because of first-class functions
+// - the function that gets passed is known as a 'callback function'
