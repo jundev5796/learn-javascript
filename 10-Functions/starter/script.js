@@ -89,3 +89,44 @@ console.log(
 // - a function that 'receives' another function as an argument, that 'returns' a new function, or 'both'
 // - this is only possible because of first-class functions
 // - the function that gets passed is known as a 'callback function'
+
+// --
+
+// 4. Functions Accepting Callback Functions
+
+console.log(
+  "--------------------------Functions Accepting Callback Functions--------------------------"
+);
+
+// - callback makes it easy to split up code into their unique aspects
+// - callback creates abstraction which means it hides all the complicated details
+
+// EXAMPLE
+const oneWord = function (str) {
+  return str.replace(/ /g, "").toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(" ");
+  return [first.toUpperCase(), ...others].join(" ");
+};
+
+// higher-order function
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+
+  console.log(`Transformed by: ${fn.name}`);
+};
+
+transformer("JavaScript is the best!", upperFirstWord);
+
+// EXAMPLE(2)
+// JS uses callbacks all the time
+const high5 = function () {
+  console.log("✋");
+};
+document.body.addEventListener("click", high5);
+
+// EXAMPLE(3) (no need to know 'forEach' method for now)
+["John", "Matt", "Adam"].forEach(high5);
