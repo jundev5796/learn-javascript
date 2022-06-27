@@ -130,3 +130,25 @@ document.body.addEventListener("click", high5);
 
 // EXAMPLE(3) (no need to know 'forEach' method for now)
 ["John", "Matt", "Adam"].forEach(high5);
+
+// 5. Functions Returning Functions
+
+console.log(
+  "--------------------------Functions Returning Functions--------------------------"
+);
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet("Hey");
+greeterHey("John");
+greeterHey("Steven");
+
+greet("Hello")("John");
+
+// using arrow functions
+const greetArrow = (greeting) => (name) => console.log(`${greeting} ${name}`);
+greetArrow("Hello")("John");
