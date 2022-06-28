@@ -131,6 +131,8 @@ document.body.addEventListener("click", high5);
 // EXAMPLE(3) (no need to know 'forEach' method for now)
 ["John", "Matt", "Adam"].forEach(high5);
 
+// --
+
 // 5. Functions Returning Functions
 
 console.log(
@@ -152,3 +154,62 @@ greet("Hello")("John");
 // using arrow functions
 const greetArrow = (greeting) => (name) => console.log(`${greeting} ${name}`);
 greetArrow("Hello")("John");
+
+// --
+
+// 6. The call and apply Methods
+
+console.log(
+  "--------------------------The call and apply Methods--------------------------"
+);
+
+// - manually manipulating the 'this' keyword
+
+// 'this' keyword application
+const lufthansa = {
+  airline: "Lufthansa",
+  iataCode: "LH",
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, "John");
+lufthansa.book(635, "Matt");
+
+const eurowings = {
+  airline: "Eurowings",
+  iataCode: "EW",
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// book(23, "Sarah Williams");
+
+// call method
+book.call(eurowings, 23, "Sarah Williams");
+console.log(eurowings);
+
+book.call(lufthansa, 239, "Mary Cooper");
+console.log(lufthansa);
+
+const swiss = {
+  airline: "Swiss Air Lines",
+  iataCode: "LX",
+  bookings: [],
+};
+
+book.call(swiss, 583, "Mary Cooper");
+console.log(swiss);
+
+// apply method (not used with modern JS)
+const flightData = [583, "George Cooper"];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+book.call(swiss, ...flightData); // modern JS method
