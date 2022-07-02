@@ -213,3 +213,59 @@ book.apply(swiss, flightData);
 console.log(swiss);
 
 book.call(swiss, ...flightData); // modern JS method
+
+// --
+
+// 7. The bind Method
+
+console.log(
+  "--------------------------The bind Method--------------------------"
+);
+
+// - 'bind' does not immediately call a function
+// - instead, it returns a new function where the 'this' keyword is bound (set to values passed to bind)
+
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, "Steven Williams");
+
+// partial application
+const bookEW23 = book.bind(eurowings, 23); // arguments pre-defined
+bookEW23("John Smith");
+bookEW23("Martha Cooper");
+
+// with event listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector(".buy")
+  .addEventListener("click", lufthansa.buyPlane.bind(lufthansa)); // bind sets the 'this' keyword
+
+// partial application (continued)
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23);
+console.log(addVAT(100));
+console.log(addVAT(23));
+
+// challenge
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+
+const addVAT2 = addTaxRate(0.23);
+console.log(addVAT2(100));
+console.log(addVAT2(23));
+
+// --
