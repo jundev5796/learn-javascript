@@ -314,3 +314,34 @@ document
 poll.displayResults.call({ answers: [5, 2, 3] }, "string");
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, "string");
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
+
+// --
+
+// 8. Immediately Invoked Function Expressions (IIFE)
+
+console.log(
+  "--------------------------Immediately Invoked Function Expressions (IIFE)--------------------------"
+);
+
+// - function that disappears right after being caled once
+// - however, this doe not mean we cannot run the function again
+// - purpose: to avoid scope-related restrictions
+// - not used much in ES6
+
+const runOnce = function () {
+  console.log("This will never run again");
+};
+runOnce();
+
+// IIFE (express and call a function at the same time)
+(function () {
+  console.log("This will never run again");
+})();
+
+(() => console.log("This will ALSO never run again"))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+console.log(notPrivate);
