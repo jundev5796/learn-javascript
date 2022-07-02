@@ -345,3 +345,33 @@ runOnce();
   var notPrivate = 46;
 }
 console.log(notPrivate);
+
+// --
+
+// 9. Closures
+
+console.log("--------------------------Closures--------------------------");
+
+// - NOTE: closure is not an explicit feature, it happens automatically in certain situations
+// - a closure makes a function remember all the variables that existed at the function's birth place (this is a peculiar phenomenon)
+// - a function has access to the variable environment (VE) of the execution context in which it was created
+// - closure: VE attached to the function, exactly as it was at the time and place the function was created
+
+// situational closures
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+// looking into closure property
+console.dir(booker);
