@@ -111,3 +111,27 @@ console.log([...arr, ...arr2]);
 
 // join method
 console.log(letters.join(" - "));
+
+// --
+
+// 2. The new at Method
+
+console.log(
+  "-------------------------------The new at Method-------------------------------"
+);
+
+// - the 'at' method is useful for method chaining
+
+// 'at' method (2022 method)
+const arr3 = [23, 11, 64];
+console.log(arr3[0]);
+console.log(arr3.at(0));
+
+// example (getting last array element)
+console.log(arr3[arr3.length - 1]); // old way
+console.log(arr3.slice(-1)[0]); // old way
+console.log(arr3.at(-1)); // new way (much easier)
+
+// string
+console.log("john".at(0));
+console.log("john".at(-1));
