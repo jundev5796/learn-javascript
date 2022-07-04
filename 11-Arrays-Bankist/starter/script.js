@@ -71,7 +71,7 @@ const currencies = new Map([
   ["GBP", "Pound sterling"],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -135,3 +135,33 @@ console.log(arr3.at(-1)); // new way (much easier)
 // string
 console.log("john".at(0));
 console.log("john".at(-1));
+
+// --
+
+// 3. Looping Arrays: forEach
+
+console.log(
+  "-------------------------------Looping Arrays: forEach-------------------------------"
+);
+
+// - forEach method takes a callback function within a higher-order function
+// - continue and break methods does not work on forEach
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+}
+
+console.log("---- FOREACH ----"); // order: element -> index -> array
+movements.forEach(function (mov, i, arr) {
+  if (mov > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${mov}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+  }
+});
