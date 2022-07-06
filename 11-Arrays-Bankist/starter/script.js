@@ -210,3 +210,29 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, _, map) {
   console.log(`${value}: ${value}`);
 });
+
+// --
+
+// Challenge #1
+
+console.log(
+  "-------------------------------Challenge #1-------------------------------"
+);
+
+const dataJulia = [3, 5, 2, 12, 7];
+const dataKate = [4, 1, 15, 8, 3];
+
+const checkDogs = function (dogsJulia, dogsKate) {
+  const newDogsJulia = dogsJulia.slice(1, 3);
+  const total = newDogsJulia.concat(dogsKate);
+  console.log(total);
+
+  total.forEach(function (age, i, arr) {
+    if (age >= 3) {
+      console.log(`Dog number ${i + 1} is an adult, and is ${age} years old`);
+    } else {
+      console.log(`Dog number ${i + 1} is still a puppy`);
+    }
+  });
+};
+checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
