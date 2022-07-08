@@ -299,8 +299,25 @@ console.log(movementsDescriptions);
 
 // --
 
-// 6. Computing Usernames
+// 7. The filter Method
 
 console.log(
-  "-------------------------------Computing Usernames-------------------------------"
+  "-------------------------------The filter Method-------------------------------"
 );
+
+// - as the name states, it filters out specific values from the original array
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+
+const withdrawals = movements.filter(function (mov) {
+  return mov < 0;
+});
+console.log(withdrawals);
