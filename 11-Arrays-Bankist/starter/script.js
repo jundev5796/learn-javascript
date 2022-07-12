@@ -454,3 +454,22 @@ const calcAverageHumanAgeArrow = (ages) =>
 const avg3 = calcAverageHumanAgeArrow([5, 2, 4, 1, 15, 8, 3]);
 const avg4 = calcAverageHumanAgeArrow([16, 6, 10, 5, 6, 1, 4]);
 console.log(avg3, avg4);
+
+// --
+
+// 10. The find Method
+
+console.log(
+  "-------------------------------The find Method-------------------------------"
+);
+
+// - unlike 'filter', 'find' returns only the very first element
+
+const firstWithdrawal = movements.find((mov) => mov < 0);
+console.log(movements);
+console.log(firstWithdrawal);
+
+console.log(accounts);
+
+const account = accounts.find((acc) => acc.owner === "Jessica Davis");
+console.log(account);
