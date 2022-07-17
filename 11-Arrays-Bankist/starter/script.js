@@ -695,3 +695,44 @@ console.log(movements);
 // });
 movements.sort((a, b) => b - a);
 console.log(movements);
+
+// --
+
+// 15. More Ways of Creating and Filling Arrays
+
+console.log(
+  "-------------------------------More Ways of Creating and Filling Arrays-------------------------------"
+);
+
+// - programmatically creating arrays
+
+const arr5 = [1, 2, 3, 4, 5, 6, 7];
+
+// create
+const x = new Array(7);
+console.log(x);
+
+// fill
+// x.fill(1);
+x.fill(1, 3, 5); // element, starting index, end index
+console.log(x);
+
+arr5.fill(23, 2, 6);
+console.log(arr5);
+
+// Array.from (combining create and fill)
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (cur, i) => i + 1);
+console.log(z);
+
+// example
+
+labelBalance.addEventListener("click", function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll(".movements__value"),
+    (el) => Number(el.textContent.replace("€", ""))
+  );
+  console.log(movementsUI);
+});
