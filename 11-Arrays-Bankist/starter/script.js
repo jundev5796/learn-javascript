@@ -729,7 +729,6 @@ const z = Array.from({ length: 7 }, (cur, i) => i + 1);
 console.log(z);
 
 // example
-
 labelBalance.addEventListener("click", function () {
   const movementsUI = Array.from(
     document.querySelectorAll(".movements__value"),
@@ -737,3 +736,19 @@ labelBalance.addEventListener("click", function () {
   );
   console.log(movementsUI);
 });
+
+// --
+
+// Array Methods Practice
+
+console.log(
+  "-------------------------------Array Methods Practice-------------------------------"
+);
+
+// practice #1 (checking the total amount of deposit)
+const bankDepositSum = accounts
+  .flatMap((acc) => acc.movements)
+  .filter((mov) => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+
+console.log(bankDepositSum);
