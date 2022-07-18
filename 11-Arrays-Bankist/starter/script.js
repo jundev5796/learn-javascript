@@ -721,6 +721,7 @@ arr5.fill(23, 2, 6);
 console.log(arr5);
 
 // Array.from (combining create and fill)
+// 'Array' is not an array, but an array constructor (similar to function)
 const y = Array.from({ length: 7 }, () => 1);
 console.log(y);
 
