@@ -382,3 +382,32 @@ labelBalance.addEventListener("click", function () {
     if (i % 3 === 0) row.style.backgroundColor = "blue";
   });
 });
+
+// --
+
+// 4. Numeric Separators
+
+console.log(
+  "-------------------------------Numeric Separators-------------------------------"
+);
+
+// - to make reading numbers easier
+
+const diameter = 287_460_000_000; // 287,460,000,000
+console.log(diameter);
+
+// example #1
+const priceCents = 345_99;
+console.log(priceCents);
+
+// example #2
+const transferFee = 15_00;
+const transferFee2 = 1_500;
+
+// example #3 (restrictions)
+const PI = 3.14_15; // cannot place underscores at the beginning, end, and between a decimal (also cannot have 2 underscores together)
+console.log(PI);
+
+// example #4 (cannot place underscore on strings)
+console.log(Number("230_000"));
+console.log(parseInt("230_000"));
