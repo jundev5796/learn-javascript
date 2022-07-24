@@ -411,3 +411,44 @@ console.log(PI);
 // example #4 (cannot place underscore on strings)
 console.log(Number("230_000"));
 console.log(parseInt("230_000"));
+
+// --
+
+// 5. Working with Bigint
+
+console.log(
+  "-------------------------------Working with Bigint-------------------------------"
+);
+
+// - numbers are represented internally as 64-bits
+// - out of the 64-bits, only 53 are used for representing numbers
+// - with bigint, we can use big numbers without limit
+
+console.log(2 ** 53 - 1); // '-1' because numbers start at 0
+console.log(Number.MAX_SAFE_INTEGER);
+
+// applying bigint
+console.log(3904280925201938590251075123578n); // displays big numbers accurately
+console.log(BigInt(490185908230984102938410395105098n));
+
+// operations
+console.log(10000n + 10000n);
+console.log(23094832015815985902819058120359n - 10000000n);
+console.log(23094832015815985902819058120359n * 10000000n);
+
+// when working with regular numbers
+const huge = 20230984092384039232890248n;
+const num = 23;
+console.log(huge * BigInt(num));
+
+// exceptions
+console.log(20n > 15);
+console.log(20n === 20); // this does not work due to type coercion
+console.log(typeof 20n);
+console.log(20n == 20);
+
+console.log(huge + " is REALLY big!!!"); // string concatenation
+
+// division
+console.log(10n / 3n);
+console.log(10 / 3);
