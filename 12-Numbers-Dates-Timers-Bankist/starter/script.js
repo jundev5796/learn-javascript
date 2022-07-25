@@ -278,7 +278,7 @@ console.log(Number.parseInt("e23", 10)); // needs to start with a number
 
 console.log(Number.parseFloat("2.5rem")); // reads decimal numbers
 
-// checkinf for values that are NaN (use only when checking for NaN)
+// checking for values that are NaN (use only when checking for NaN)
 console.log(Number.isNaN(20)); // checking for numbers
 console.log(Number.isNaN("20"));
 console.log(Number.isNaN(+"20X"));
