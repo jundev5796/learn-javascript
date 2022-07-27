@@ -92,8 +92,8 @@ const displayMovements = function (acc, sort = false) {
     const type = mov > 0 ? "deposit" : "withdrawal";
 
     const date = new Date(acc.movementsDates[i]);
-    const day = `${date.getDate()}`.padStart(2, "0");
-    const month = `${date.getMonth() + 1}`.padStart(2, "0");
+    const day = `${date.getDate()}`.padStart(2, 0);
+    const month = `${date.getMonth() + 1}`.padStart(2, 0);
     const year = date.getFullYear();
     const displayDate = `${day}/${month}/${year}`;
 
@@ -189,11 +189,11 @@ btnLogin.addEventListener("click", function (e) {
 
     // create current date and time
     const now2 = new Date();
-    const day = `${now2.getDate()}`.padStart(2, "0");
-    const month = `${now2.getMonth() + 1}`.padStart(2, "0");
+    const day = `${now2.getDate()}`.padStart(2, 0);
+    const month = `${now2.getMonth() + 1}`.padStart(2, 0);
     const year = now2.getFullYear();
-    const hour = now2.getHours();
-    const min = now2.getMinutes();
+    const hour = `${now2.getHours()}`.padStart(2, 0);
+    const min = `${now2.getMinutes()}`.padStart(2, 0);
     labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
 
     // Clear input fields
@@ -223,6 +223,10 @@ btnTransfer.addEventListener("click", function (e) {
     currentAccount.movements.push(-amount);
     receiverAcc.movements.push(amount);
 
+    // Add transfer date
+    currentAccount.movementsDates.push(new Date().toISOString());
+    receiverAcc.movementsDates.push(new Date().toISOString());
+
     // Update UI
     updateUI(currentAccount);
   }
@@ -239,6 +243,9 @@ btnLoan.addEventListener("click", function (e) {
   ) {
     // Add movement
     currentAccount.movements.push(amount);
+
+    // Add transfer date
+    currentAccount.movementsDates.push(new Date().toISOString());
 
     // Update UI
     updateUI(currentAccount);
