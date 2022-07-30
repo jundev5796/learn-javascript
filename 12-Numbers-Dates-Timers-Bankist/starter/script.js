@@ -294,14 +294,16 @@ btnLoan.addEventListener("click", function (e) {
     amount > 0 &&
     currentAccount.movements.some((mov) => mov >= amount * 0.1)
   ) {
-    // Add movement
-    currentAccount.movements.push(amount);
+    setTimeout(function () {
+      // Add movement
+      currentAccount.movements.push(amount);
 
-    // Add transfer date
-    currentAccount.movementsDates.push(new Date().toISOString());
+      // Add transfer date
+      currentAccount.movementsDates.push(new Date().toISOString());
 
-    // Update UI
-    updateUI(currentAccount);
+      // Update UI
+      updateUI(currentAccount);
+    }, 2500);
   }
   inputLoanAmount.value = "";
 });
@@ -625,3 +627,32 @@ console.log(
   navigator.language,
   new Intl.NumberFormat(navigator.language, options).format(num2)
 );
+
+// --
+
+// 9. Timers: setTimeout and setInterval
+
+console.log(
+  "-------------------------------Timers: setTimeout and setInterval-------------------------------"
+);
+
+// - setting a time for a callback function to execute
+
+// setTimeout
+const ingredients = ["olives", "spinach"];
+
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2}`),
+  3000,
+  ...ingredients
+); // 3s = 3000ms
+console.log("Waiting..."); // asynchronous javascript (code executes simultaneously)
+
+// clearing setTimeout before execution
+if (ingredients.includes("spinach")) clearTimeout(pizzaTimer);
+
+// setInterval
+// setInterval(function () {
+//   const now = new Date();
+//   console.log(now);
+// }, 1000);
