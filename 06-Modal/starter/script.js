@@ -31,6 +31,9 @@ btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
 // handling keypress events
+
+// - we do not call the function, but only define it with a parameter name
+
 document.addEventListener('keydown', function (e) {
   console.log(e.key);
   if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
