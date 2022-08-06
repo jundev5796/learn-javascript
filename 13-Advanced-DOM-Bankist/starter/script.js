@@ -47,3 +47,56 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
+
+///////////////////////////////////////
+// NOTES
+///////////////////////////////////////
+
+// 1. Selecting, Creating, and Deleting Elements
+
+console.log(
+  `-----------------------------1. Selecting, Creating, and Deleting Elements-----------------------------`
+);
+
+// selecting the entire document/head/body of a webpage
+console.log(document.documentElement);
+console.log(document.head);
+console.log(document.body);
+
+// selecting using querySelector
+const header = document.querySelector(".header");
+const allSection = document.querySelectorAll(".section");
+console.log(allSection);
+
+// selecting id's
+document.getElementById("section--1");
+
+// if the DOM changes, the HTML collection is updated automatically
+const allButtons = document.getElementsByTagName("button"); // returns an HTML collection (different from a node list)
+console.log(allButtons);
+
+// selecting only classes
+console.log(document.getElementsByClassName("btn"));
+
+// creating and inserting elements
+// .insertAdjacentHTML
+const message = document.createElement("div");
+message.classList.add("cookie-message");
+// message.textContent = "We use cookies for improved functionality and analytics.";
+message.innerHTML = `We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>`;
+
+// inserting elements positionally
+// header.prepend(message);
+header.append(message);
+
+// inserting multiple copies of the same element
+// header.append(message.cloneNode(true));
+// header.before(message);
+// header.after(message);
+
+// delete elements
+document
+  .querySelector(".btn--close-cookie")
+  .addEventListener("click", function () {
+    message.remove();
+  });
