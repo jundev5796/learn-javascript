@@ -100,3 +100,55 @@ document
   .addEventListener("click", function () {
     message.remove();
   });
+
+// --
+
+// 2. Styles, Attributes and Classes
+
+console.log(
+  `-----------------------------2. Styles, Attributes and Classes-----------------------------`
+);
+
+// styles
+message.style.backgroundColor = "#37383d"; // inline styles: styles directly set within the DOM
+message.style.width = "120%";
+
+console.log(message.style.color);
+console.log(message.style.backgroundColor);
+
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+
+// manually increasing height
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
+
+// changing CSS customary variables
+document.documentElement.style.setProperty("--color-primary", "orangered");
+
+// attributes
+const logo = document.querySelector(".nav__logo");
+console.log(logo.alt);
+
+console.log(logo.src);
+console.log(logo.getAttribute("src"));
+
+const link = document.querySelector(".nav__link--btn");
+console.log(link.href);
+console.log(link.getAttribute("href"));
+
+console.log(logo.className);
+
+logo.alt = "Beautiful minimalist log";
+
+// data attributes
+console.log(logo.dataset.versionNumber);
+
+// classes
+logo.classList.add("c", "j");
+logo.classList.remove("c", "j");
+logo.classList.toggle("c");
+logo.classList.contains("c");
+
+// setting class (don't use!)
+logo.className = "John";
