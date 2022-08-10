@@ -80,14 +80,14 @@ console.log(document.getElementsByClassName("btn"));
 
 // creating and inserting elements
 // .insertAdjacentHTML
-const message = document.createElement("div");
-message.classList.add("cookie-message");
+// const message = document.createElement("div");
+// message.classList.add("cookie-message");
 // message.textContent = "We use cookies for improved functionality and analytics.";
-message.innerHTML = `We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>`;
+// message.innerHTML = `We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>`;
 
 // inserting elements positionally
 // header.prepend(message);
-header.append(message);
+// header.append(message);
 
 // inserting multiple copies of the same element
 // header.append(message.cloneNode(true));
@@ -95,11 +95,11 @@ header.append(message);
 // header.after(message);
 
 // delete elements
-document
-  .querySelector(".btn--close-cookie")
-  .addEventListener("click", function () {
-    message.remove();
-  });
+// document
+//   .querySelector(".btn--close-cookie")
+//   .addEventListener("click", function () {
+//     message.remove();
+//   });
 
 // --
 
@@ -110,48 +110,48 @@ console.log(
 );
 
 // styles
-message.style.backgroundColor = "#37383d"; // inline styles: styles directly set within the DOM
-message.style.width = "120%";
+// message.style.backgroundColor = "#37383d"; // inline styles: styles directly set within the DOM
+// message.style.width = "120%";
 
-console.log(message.style.color);
-console.log(message.style.backgroundColor);
+// console.log(message.style.color);
+// console.log(message.style.backgroundColor);
 
-console.log(getComputedStyle(message).color);
-console.log(getComputedStyle(message).height);
+// console.log(getComputedStyle(message).color);
+// console.log(getComputedStyle(message).height);
 
 // manually increasing height
-message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
+// message.style.height =
+//   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
 
 // changing CSS customary variables
-document.documentElement.style.setProperty("--color-primary", "orangered");
+// document.documentElement.style.setProperty("--color-primary", "orangered");
 
 // attributes
-const logo = document.querySelector(".nav__logo");
-console.log(logo.alt);
+// const logo = document.querySelector(".nav__logo");
+// console.log(logo.alt);
 
-console.log(logo.src);
-console.log(logo.getAttribute("src"));
+// console.log(logo.src);
+// console.log(logo.getAttribute("src"));
 
-const link = document.querySelector(".nav__link--btn");
-console.log(link.href);
-console.log(link.getAttribute("href"));
+// const link = document.querySelector(".nav__link--btn");
+// console.log(link.href);
+// console.log(link.getAttribute("href"));
 
-console.log(logo.className);
+// console.log(logo.className);
 
-logo.alt = "Beautiful minimalist log";
+// logo.alt = "Beautiful minimalist log";
 
 // data attributes
-console.log(logo.dataset.versionNumber);
+// console.log(logo.dataset.versionNumber);
 
 // classes
-logo.classList.add("c", "j");
-logo.classList.remove("c", "j");
-logo.classList.toggle("c");
-logo.classList.contains("c");
+// logo.classList.add("c", "j");
+// logo.classList.remove("c", "j");
+// logo.classList.toggle("c");
+// logo.classList.contains("c");
 
 // setting class (don't use!)
-logo.className = "John";
+// logo.className = "John";
 
 // --
 
@@ -200,6 +200,7 @@ btnScrollTo.addEventListener("click", function (e) {
 console.log(
   `-----------------------------4. Types of Events and Event Handlers-----------------------------`
 );
+
 const h1 = document.querySelector("h1");
 
 const alertH1 = function (e) {
@@ -217,3 +218,40 @@ setTimeout(() => h1.removeEventListener("mouseenter", alertH1), 3000);
 // h1.onmouseenter = function (e) {
 //   alert("addEventListener: Great! You are reading the heading :D");
 // };
+
+// --
+
+// 5. Event Propagation: Bubbling and Capturing
+
+console.log(
+  `-----------------------------5. Event Propagation: Bubbling and Capturing-----------------------------`
+);
+
+// - during a click event, the event is generated at the root of the document
+// - CAPTURING PHASE: the event travels down all the way to the target element
+// - TARGET PHASE: events are handled by event listeners
+// - BUBBLING PHASE: after the event, the event travels back to the document
+// - the event can also occur in each of the parent element
+
+// rgb(255,255,255)
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () => `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+
+document.querySelector(".nav__link").addEventListener("click", function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log("LINK", e.target, e.currentTarget);
+
+  // stop propagation
+  // e.stopPropagation();
+});
+
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log("CONTAINER", e.target, e.currentTarget);
+});
+
+document.querySelector(".nav").addEventListener("click", function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log("NAV", e.target, e.currentTarget);
+});
