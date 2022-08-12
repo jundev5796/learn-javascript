@@ -4,8 +4,8 @@
 
 // What is the DOM?
 
-// - interface between JavaScript and the browser (HTML document rendered in and by the browser)
-// - use to make JavaScript interact with the browser (ex. create, modify, and delete HTML elements / set styles / listen and respond to events)
+// - Interface between JavaScript and the browser (HTML document rendered in and by the browser)
+// - Use to make JavaScript interact with the browser (ex. create, modify, and delete HTML elements / set styles / listen and respond to events)
 // - DOM tree is generated from an HTML document
 // - DOM is a very complex API that contains lots of methods and properties to interact with the DOM tree (ex. .querySelector(), .addEventListener())
 // - There are various kinds of nodes within the DOM (elements, texts)
@@ -14,6 +14,7 @@
 
 // - DOM API is divided into differents types of nodes
 // - HTML elements inherits methods of properties from their parents
+// - The event target is the parent of both the node and window object
 
 ///////////////////////////////////////
 // Modal window
@@ -255,3 +256,11 @@ document.querySelector(".nav").addEventListener("click", function (e) {
   this.style.backgroundColor = randomColor();
   console.log("NAV", e.target, e.currentTarget);
 });
+
+// --
+
+// 6. Event Delegation: Implementing Page Navigation
+
+console.log(
+  `-----------------------------6. Event Delegation: Implementing Page Navigation-----------------------------`
+);
