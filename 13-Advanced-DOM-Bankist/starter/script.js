@@ -125,7 +125,7 @@ console.log(
 //   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
 
 // changing CSS customary variables
-// document.documentElement.style.setProperty("--color-primary", "orangered");
+// document.documentElement.style.setProperty("--color-primary", "orangered"); // use 'documentElement' property to set style
 
 // attributes
 // const logo = document.querySelector(".nav__logo");
