@@ -191,7 +191,7 @@ btnScrollTo.addEventListener("click", function (e) {
   //   behavior: "smooth",
   // });
 
-  section1.scrollIntoView({ behavior: "smooth" });
+  section1.scrollIntoView({ behavior: "smooth" }); // add in an object for visual effects
 });
 
 // --
