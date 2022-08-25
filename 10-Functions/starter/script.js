@@ -41,7 +41,7 @@ console.log(
 
 // - primitive types gets copied while not affecting the original
 // - reference types gets copied (from the heap) which can affect the original
-// - javascript only passes by value NOT reference
+// - javascript only passes by value NOT reference (the reference value is still considered a 'value' by javascript)
 
 const flight = "LH234";
 const john = {
