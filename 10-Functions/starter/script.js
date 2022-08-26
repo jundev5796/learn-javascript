@@ -187,9 +187,9 @@ const eurowings = {
   bookings: [],
 };
 
-const book = lufthansa.book;
+const book = lufthansa.book; // it is important to understand how the function is called when using a 'this' keyword
 
-// book(23, "Sarah Williams");
+// book(23, "Sarah Williams"); // this will not work because the 'this' keyword will point to 'undefined'
 
 // call method
 book.call(eurowings, 23, "Sarah Williams");
