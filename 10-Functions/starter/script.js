@@ -245,6 +245,7 @@ lufthansa.buyPlane = function () {
   console.log(this.planes);
 };
 
+// the 'this' keyword is set dynamically
 document
   .querySelector(".buy")
   .addEventListener("click", lufthansa.buyPlane.bind(lufthansa)); // bind sets the 'this' keyword
