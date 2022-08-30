@@ -325,7 +325,7 @@ console.log(
 );
 
 // - function that disappears right after being caled once
-// - however, this doe not mean we cannot run the function again
+// - however, this does not mean we cannot run the function again
 // - purpose: to avoid scope-related restrictions
 // - not used much in ES6
 
@@ -341,6 +341,7 @@ runOnce();
 
 (() => console.log("This will ALSO never run again"))();
 
+// easier method
 {
   const isPrivate = 23;
   var notPrivate = 46;
