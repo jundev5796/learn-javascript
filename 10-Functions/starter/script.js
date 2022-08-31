@@ -369,7 +369,7 @@ const secureBooking = function () {
   };
 };
 
-const booker = secureBooking();
+const booker = secureBooking(); // for closure, the target variable has priority over scope chain
 
 booker();
 booker();
