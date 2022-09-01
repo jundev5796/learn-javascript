@@ -352,7 +352,7 @@ for (const movement of movements) {
   }
 }
 
-console.log("---- FOREACH ----"); // order: element -> index -> array
+console.log("---- FOREACH ----"); // parameter order: element -> index -> array
 movements.forEach(function (mov, i, arr) {
   if (mov > 0) {
     console.log(`Movement ${i + 1}: You deposited ${mov}`);
@@ -360,6 +360,12 @@ movements.forEach(function (mov, i, arr) {
     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
   }
 });
+
+// How forEach is processed
+// 0: function(200)
+// 1: function(450)
+// 2: function(400)
+// ...
 
 // --
 
