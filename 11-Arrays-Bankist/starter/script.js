@@ -69,6 +69,7 @@ const displayMovements = function (movements, sort = false) {
   movs.forEach(function (mov, i) {
     const type = mov > 0 ? "deposit" : "withdrawal";
 
+    // use template literals to apply html elements on script
     const html = `
     <div class="movements__row">
       <div class="movements__type movements__type--${type}">${
